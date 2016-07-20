@@ -76,7 +76,7 @@ func (p *lsCmd) Execute(_ context.Context, f *flag.FlagSet, _ ...interface{}) su
 				continue
 			}
 			if p.long {
-				fmt.Fprintf(w, "\t%v\t(%x)\t%v\t%v\t%v\t%v\t%v\n", id, sha256sum, file.Filesize, file.Chunksize, file.Chunks, file.ModifiedTime.Format(time.Stamp), file.Filename)
+				fmt.Fprintf(w, "\t%v\t(%x)\t%v\t%v\t%v\t%v\t%v\n", id, sha256sum, file.Filesize, file.Chunksize, len(file.Chunks), file.ModifiedTime.Format(time.Stamp), file.Filename)
 			} else {
 				fmt.Fprintf(w, "\t%v\n", file.Filename)
 			}
